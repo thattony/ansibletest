@@ -4,17 +4,11 @@
   become: true
   tasks:
 
-
-  - name: update repo index
-    apt:
-      update-cache: yes  
-
-  - name: install apache2 package
-    apt: 
-      name: apache2 
+  - name: install apache and php
+    package:  # agnostic package manager; will be substituted by local PK based on distro.
+    # https://docs.ansible.com/ansible/latest/modules/package_module.html
+      name: 
+        - "{{ apache_pack }}" 
+        - "{{ php_pack }}"
       state: latest
-
-  - name: add php support for apache
-    apt:
-      name: libapache2-mod-php
-      state: latest
+      update_cache: yes

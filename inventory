@@ -1,2 +1,3 @@
-192.168.122.104
-192.168.122.96
+192.168.122.104 apache_pack=apache2 php_pack=libapache2-mod-php
+192.168.122.96 apache_pack=apache2 php_pack=libapache2-mod-php
+192.168.122.105 apache_pack=httpd php_pack=php
